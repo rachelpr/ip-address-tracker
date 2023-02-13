@@ -1,24 +1,24 @@
 import { React, useState } from "react";
 
 function Search(props) {
-  const [searchedIp, setSearchedIp] = useState("");
+  const [searchedInput, setSearchedInput] = useState("");
 
   function takeIpInput(e) {
     const input = e.target.value;
-    setSearchedIp(input);
+    setSearchedInput(input);
   }
   function submitHandler(e) {
     e.preventDefault();
-    props.setIp(searchedIp);
+    props.setSearchInput(searchedInput);
   }
 
   return (
     <form onSubmit={submitHandler}>
       <input
         type="text"
-        name="searchedIp"
+        name="searchedInput"
         onChange={takeIpInput}
-        value={searchedIp}
+        value={searchedInput}
         placeholder="Search for any IP address or domain"
       ></input>
       <button type="submit">Search</button>
