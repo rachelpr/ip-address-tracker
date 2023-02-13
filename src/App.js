@@ -6,12 +6,14 @@ import Loading from "./components/Loading";
 
 function App() {
   const [location, setLocation] = useState(null);
-  const [ip, setIp] = useState("");
+  const [searchInput, setSearchInput] = useState("");
 
   const apiURL = process.env.REACT_APP_IPIFY_URL;
 
   const getData = async () => {
-    const response = await axios.get(`${apiURL}${ip}`);
+    const response = await axios.get(
+      `${apiURL}ipAddress=${searchInput}&domain=${searchInput}`
+    );
     console.log(response.data);
     setLocation(response.data);
   };
@@ -19,12 +21,12 @@ function App() {
   useEffect(() => {
     getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ip]);
+  }, [searchInput]);
 
   return (
     <div className="App">
       <h1>IP Address Tracker</h1>
-      <Search setIp={setIp} />
+      <Search setSearchInput={setSearchInput} />
       {!location && <Loading />}
       {location && <LocationInfo data={location} />}
     </div>
