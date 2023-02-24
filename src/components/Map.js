@@ -1,16 +1,22 @@
-import { React } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { React, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import iconMarker from "leaflet/dist/images/marker-icon.png";
 import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
-function Map(props) {
-  const { lat, lng } = props;
-  console.log(lat, lng);
+function Map({ lat, lng }) {
+  let position = [lat, lng];
+  let zoom = 13;
 
-  const scrollListener = () => {};
+  function LocationMarker(props) {
+    const map = useMap();
+
+    useEffect(() => {
+      map.flyTo(props.position, props.zoom);
+    });
+  }
 
   const icon = L.icon({
     iconRetinaUrl: iconRetina,
@@ -20,10 +26,10 @@ function Map(props) {
   });
 
   return (
-    <div onScroll={scrollListener}>
+    <div>
       <MapContainer
-        center={[lat, lng]}
-        zoom={13}
+        center={position}
+        zoom={zoom}
         scrollWheelZoom={true}
         zoomControl={false}
         style={{ height: "100vh", width: "100vw" }}
@@ -32,12 +38,13 @@ function Map(props) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker key={Object.id} icon={icon} position={[lat, lng]}>
+        <Marker key={Object.id} icon={icon} position={position}>
           <Popup>
             Latitude: {lat} <br />
             Longitude: {lng}
           </Popup>
         </Marker>
+        <LocationMarker position={position} zoom={zoom} />
       </MapContainer>
     </div>
   );
