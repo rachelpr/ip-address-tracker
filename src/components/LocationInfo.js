@@ -2,7 +2,7 @@ import React from "react";
 
 function LocationInfo(props) {
   //const data = { props };
-  console.log(props);
+  //console.log(props);
   return (
     <div>
       <h1>Location Info</h1>
