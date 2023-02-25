@@ -4,12 +4,23 @@ function LocationInfo(props) {
   //const data = { props };
   //console.log(props);
   return (
-    <div>
-      <h1>Location Info</h1>
-      <h1>IP Address: {props.data.ip}</h1>
-      <h1>Location: {props.data.location.country}</h1>
-      <h1>Timezone: {props.data.location.timezone}</h1>
-      <h1>ISP: {props.data.isp}</h1>
+    <div className="bg-white">
+      <div className="flex flex-col">
+        <span className="text-xs text-gray-500">IP Address</span>
+        <span>12.34.56.78</span>
+      </div>
+      <div className="flex flex-col">
+        <span className="text-xs text-gray-500">Location</span>
+        <span>Lower Sackville</span>
+      </div>
+      <div className="flex flex-col">
+        <span className="text-xs text-gray-500">Timezone</span>
+        <span>-05:00</span>
+      </div>
+      <div className="flex flex-col">
+        <span className="text-xs text-gray-500">ISP</span>
+        <span>Eastlink</span>
+      </div>
     </div>
   );
 }
