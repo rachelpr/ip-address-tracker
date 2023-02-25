@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import Search from "./components/Search";
 import LocationInfo from "./components/LocationInfo";
+
 import Loading from "./components/Loading";
 import Map from "./components/Map";
 
@@ -15,28 +16,36 @@ function App() {
     const response = await axios.get(
       `${apiURL}ipAddress=${searchInput}&domain=${searchInput}`
     );
-    console.log(response.data);
+    //console.log(response.data);
     setLocation(response.data);
   };
 
-  useEffect(() => {
-    getData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchInput]);
+  // useEffect(() => {
+  //   getData();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [searchInput]);
 
   return (
     <>
-      <div className="App">
-        <h1>IP Address Tracker</h1>
-        <Search setSearchInput={setSearchInput} />
-        {!location && <Loading />}
-        {location && <LocationInfo data={location} />}
-      </div>
       <div>
-        {!location && <Loading />}
-        {location && (
-          <Map lat={location.location.lat} lng={location.location.lng} />
-        )}
+        <div className="flex flex-col items-center main-container place-content-around">
+          <div className="text-white text-2xl font-bold">
+            IP Address Tracker
+          </div>
+          <div className="flex flex-col w-11/12">
+            <Search setSearchInput={setSearchInput} />
+          </div>
+        </div>
+        <div className="w-11/12">
+          {/* {!location && <Loading />} */}
+          <LocationInfo className="" data={location} />
+        </div>
+        <div className="Map">
+          {/* {!location && <Loading />} */}
+          <Map />
+          {/* {location && (
+        )} */}
+        </div>
       </div>
     </>
   );
