@@ -6,7 +6,9 @@ import iconMarker from "leaflet/dist/images/marker-icon.png";
 import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
-function Map({ lat, lng }) {
+function Map() {
+  let lat = 44.752361;
+  let lng = -63.66468;
   let position = [lat, lng];
   let zoom = 13;
 
