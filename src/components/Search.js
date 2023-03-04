@@ -15,13 +15,19 @@ function Search(props) {
   return (
     <form onSubmit={submitHandler}>
       <input
+        className="p-3 rounded-tl-xl rounded-bl-xl h-[50px] w-5/6 drop-shadow-md placeholder:text-sm text-[18px] cursor-pointer"
         type="text"
         name="searchedInput"
         onChange={takeIpInput}
         value={searchedInput}
         placeholder="Search for any IP address or domain"
       ></input>
-      <button type="submit">Search</button>
+      <button
+        className="bg-black p-4 rounded-tr-xl rounded-br-xl h-[50px] drop-shadow-md w-1/6 hover:bg-very-dark-gray"
+        type="submit"
+      >
+        <img src="./images/icon-arrow.svg" alt="arrow" className="mx-auto" />
+      </button>
     </form>
   );
 }

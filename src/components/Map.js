@@ -6,7 +6,7 @@ import iconMarker from "leaflet/dist/images/marker-icon.png";
 import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
-function Map({ lat, lng }) {
+function Map({lat,lng}) {
   let position = [lat, lng];
   let zoom = 13;
 
@@ -26,13 +26,13 @@ function Map({ lat, lng }) {
   });
 
   return (
-    <div>
+    <div className="absolute main-container">
       <MapContainer
         center={position}
         zoom={zoom}
         scrollWheelZoom={true}
         zoomControl={false}
-        style={{ height: "100vh", width: "100vw" }}
+        style={{ height: "100vh", width: "100%" }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
