@@ -16,7 +16,6 @@ function App() {
     const response = await axios.get(
       `${apiURL}ipAddress=${searchInput}&domain=${searchInput}`
     );
-    //console.log(response.data);
     setLocation(response.data);
   };
 
