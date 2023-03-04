@@ -30,7 +30,7 @@ function Map({lat,lng}) {
       <MapContainer
         center={position}
         zoom={zoom}
-        scrollWheelZoom={true}
+        scrollWheelZoom={false}
         zoomControl={false}
         style={{ height: "100vh", width: "100%" }}
       >
