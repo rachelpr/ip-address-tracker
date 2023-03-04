@@ -16,7 +16,7 @@ function LocationInfo(props) {
           Location
         </span>
         <span className="text-lg font-medium pb-2">
-          {props.data.location.country}
+          {props.data.location.city}, {props.data.location.country}
         </span>
       </div>
       <div className="flex flex-col items-center sm:items-start">
