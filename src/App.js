@@ -20,10 +20,10 @@ function App() {
     setLocation(response.data);
   };
 
-  // useEffect(() => {
-  //   getData();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [searchInput]);
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchInput]);
 
   return (
     <>
@@ -37,14 +37,14 @@ function App() {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          {/* {!location && <Loading />} */}
-          <LocationInfo className="" data={location} />
+          {!location && <Loading />}
+          {location && <LocationInfo data={location} />}
         </div>
         <div className="Map">
-          {/* {!location && <Loading />} */}
-          <Map />
-          {/* {location && (
-        )} */}
+          {!location && <Loading />}
+          {location && (
+            <Map lat={location.location.lat} lng={location.location.lng} />
+          )}
         </div>
       </div>
     </>
