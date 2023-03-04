@@ -27,16 +27,16 @@ function App() {
 
   return (
     <>
-      <div>
-        <div className="flex flex-col items-center main-container place-content-around">
-          <div className="text-white text-2xl font-bold">
+      <div className="cursor-pointer">
+        <div className="flex flex-col items-center main-container">
+          <div className="text-white text-2xl font-bold pt-7">
             IP Address Tracker
           </div>
-          <div className="flex flex-col w-11/12">
+          <div className="pt-5 w-11/12 md:w-1/3">
             <Search setSearchInput={setSearchInput} />
           </div>
         </div>
-        <div className="w-11/12">
+        <div className="flex justify-center items-center">
           {/* {!location && <Loading />} */}
           <LocationInfo className="" data={location} />
         </div>

@@ -28,13 +28,13 @@ function Map() {
   });
 
   return (
-    <div>
+    <div className="absolute main-container">
       <MapContainer
         center={position}
         zoom={zoom}
         scrollWheelZoom={true}
         zoomControl={false}
-        style={{ height: "100vh", width: "100vw" }}
+        style={{ height: "100vh", width: "100%" }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
