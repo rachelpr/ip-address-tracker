@@ -31,7 +31,7 @@ function App() {
           <div className="text-white text-2xl font-bold pt-7">
             IP Address Tracker
           </div>
-          <div className="pt-5 w-11/12 md:w-1/3">
+          <div className="pt-5 w-11/12 sm:w-2/5">
             <Search setSearchInput={setSearchInput} />
           </div>
         </div>
