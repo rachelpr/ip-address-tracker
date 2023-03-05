@@ -32,8 +32,8 @@ Users should be able to:
 ![Mobile Screenshot](./public/images/screenshot-mobile.png)
 
 ### Links
-<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
+- [Solution](https://www.frontendmentor.io/solutions/ip-address-tracker-built-w-react-DBbmslmDHA)
+- [Live Site](https://6404cb0138068b3532690892--celebrated-paletas-3635b6.netlify.app/)
 
 ### Built with
 - [React](https://reactjs.org/)
